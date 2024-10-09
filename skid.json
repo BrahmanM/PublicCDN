@@ -3,5 +3,5 @@
     "Urls1": "cdn.oldrec.net/ddos",
     "Urls2": "",
     "isddos": true,
-    "downloadfile": "https://example.com/path/to/file.ext"
+    "downloadfile": ""
 }
