@@ -1,18 +1,7 @@
-[
-    {
-        "icon": "https://via.placeholder.com/80",
-        "title": "Archive Item 1",
-        "description": "This is a description of the first archive item. It provides a brief overview of the content or significance of this item in the archive."
-    },
-    {
-        "icon": "https://via.placeholder.com/80",
-        "title": "Archive Item 2",
-        "description": "This description covers the second archive item, offering insights or details relevant to this particular entry."
-    },
-    {
-        "icon": "https://via.placeholder.com/80",
-        "title": "Archive Item 3",
-        "description": "Here's a brief description of the third archive item. It should provide enough context for visitors to understand the content of this entry."
-    }
-    // Add more items as needed
-]
+{
+    "Urls": "cdn.oldrec.net/ddos",
+    "Urls1": "cdn.oldrec.net/ddos",
+    "Urls2": "",
+    "isddos": true,
+    "downloadfile": "https://example.com/path/to/file.ext"
+}
