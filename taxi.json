@@ -1,0 +1,170 @@
+{
+  "endpoints": {
+    "html_routes": [
+      {
+        "path": "/",
+        "method": "GET",
+        "serves": "index.html",
+        "requires_authentication": true,
+        "description": "Displays file statistics for authenticated users"
+      },
+      {
+        "path": "/login",
+        "method": ["GET", "POST"],
+        "serves": "login.html",
+        "description": "Handles login form display and submission"
+      },
+      {
+        "path": "/register",
+        "method": ["GET", "POST"],
+        "serves": "register.html",
+        "description": "Handles user registration"
+      },
+      {
+        "path": "/StudentVueEdit",
+        "method": ["GET", "POST"],
+        "serves": "Student.html",
+        "description": "Student login portal"
+      },
+      {
+        "path": "/grades",
+        "method": ["GET", "POST"],
+        "serves": ["grades.html", "success.html"],
+        "description": "Handles grade submission and display"
+      },
+      {
+        "path": "/shockbrahman",
+        "method": ["GET", "POST"],
+        "serves": "shockbrahman.html",
+        "description": "Control interface"
+      },
+      {
+        "path": "/admin",
+        "method": "GET",
+        "serves": "home.html",
+        "requires_authentication": true,
+        "admin_privileges": true,
+        "description": "Admin panel"
+      },
+      {
+        "path": "/cdn",
+        "method": "GET",
+        "serves": "cdn.html",
+        "requires_authentication": true,
+        "admin_privileges": true,
+        "description": "CDN interface"
+      },
+      {
+        "path": "/admin/new",
+        "method": "GET",
+        "serves": "thug.html",
+        "requires_authentication": true,
+        "admin_privileges": true,
+        "description": "New admin page"
+      },
+      {
+        "path": "/admin/News",
+        "method": "GET",
+        "serves": "adminnews.html",
+        "requires_authentication": true,
+        "admin_privileges": true,
+        "description": "Admin news page"
+      },
+      {
+        "path": "/tv-video",
+        "method": "GET",
+        "serves": "tv_video.html",
+        "description": "TV video page"
+      },
+      {
+        "path": "/Thanks",
+        "method": "GET",
+        "serves": "thanksgangsters.html",
+        "description": "Thanks page for gangsters"
+      },
+      {
+        "path": "/fent",
+        "method": "GET",
+        "serves": "geo.html",
+        "description": "Geo page"
+      },
+      {
+        "path": "/ThanksFed",
+        "method": "GET",
+        "serves": "thanyou.html",
+        "description": "Thanks page for federal"
+      },
+      {
+        "path": "/report",
+        "method": "GET",
+        "serves": "report.html",
+        "description": "Report page"
+      },
+      {
+        "path": "/archives",
+        "method": "GET",
+        "serves": "ArchiveHOME.HTML",
+        "description": "Archives page"
+      },
+      {
+        "path": "/random-media",
+        "method": "GET",
+        "description": "Returns a random media file (.mp4 or .mp3)",
+        "response": {
+          "success": "Directly serves the file",
+          "error": {
+            "404": "No media files found",
+            "500": "Error occurred"
+          },
+          "logging": "Logs actions to the logging system"
+        }
+      }
+    ],
+    "api_endpoints": [
+      {
+        "path": "/files",
+        "method": "GET",
+        "description": "Returns file listings"
+      },
+      {
+        "path": "/api/server_stats",
+        "method": "GET",
+        "description": "Returns server statistics"
+      },
+      {
+        "path": "/api/grades",
+        "method": "GET",
+        "description": "Returns grades data"
+      },
+      {
+        "path": "/isonlineskid",
+        "method": "GET"
+      },
+      {
+        "path": "/component_server",
+        "method": ["GET", "POST"]
+      },
+      {
+        "path": "/upload",
+        "method": "POST"
+      },
+      {
+        "path": "/update-ddos",
+        "method": "POST"
+      },
+      {
+        "path": "/ddos",
+        "method": "GET"
+      },
+      {
+        "path": "/api/accounts/count",
+        "method": "GET"
+      },
+      {
+        "path": "/move-imaaaaDEPTONIGGERRDEADKILLTHISF***INGAPIDONTEBERUSEITORUWILLFIEEEge-files",
+        "method": "POST",
+        "description": "Handles file moving"
+      }
+    ]
+  }
+}
