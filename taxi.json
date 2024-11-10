@@ -68,6 +68,14 @@
         "admin_privileges": true,
         "description": "New admin page"
       },
+       {
+        "path": "/hoa",
+        "method": "GET",
+        "serves": "d31c663a2ccc5cae603ed710708b5cdc.html",
+        "requires_authentication": false,
+        "admin_privileges": false,
+        "description": "HOA - Hall of Autism"
+      },
       {
         "path": "/admin/News",
         "method": "GET",
