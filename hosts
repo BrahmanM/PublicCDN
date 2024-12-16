@@ -1,0 +1,88 @@
+# Copyright (c) 1993-2009 Microsoft Corp.
+#
+# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+#
+# This file contains the mappings of IP addresses to host names. Each
+# entry should be kept on an individual line. The IP address should
+# be placed in the first column followed by the corresponding host name.
+# The IP address and the host name should be separated by at least one
+# space.
+#
+# Additionally, comments (such as these) may be inserted on individual
+# lines or following the machine name denoted by a '#' symbol.
+#
+# For example:
+#
+#      102.54.94.97     rhino.acme.com          # source server
+#       38.25.63.10     x.acme.com              # x client host
+# localhost name resolution is handled within DNS itself.
+#	127.0.0.1       localhost
+#	::1             localhost
+52.151.239.148 api.rec.net
+127.0.0.1 moderation.rec.net
+
+
+0.0.0.0 cklickmaster.com
+0.0.0.0 onbit.pro
+0.0.0.0 snifferip.com
+0.0.0.0 unl.one
+0.0.0.0 grabify.org
+0.0.0.0 unl.one
+0.0.0.0 bmwforum.co
+0.0.0.0 catsnthing.com
+0.0.0.0 datasig.io
+0.0.0.0 datauth.io
+0.0.0.0 freegiftcards.co
+0.0.0.0 gamingfun.me
+0.0.0.0 grabify.link
+0.0.0.0 leancoding.co
+0.0.0.0 locations.quest
+0.0.0.0 lovebird.guru
+0.0.0.0 partpicker.shop
+0.0.0.0 quickmessage.us
+0.0.0.0 screenshare.host
+0.0.0.0 sportshub.bar
+0.0.0.0 spottyfly.com
+0.0.0.0 stopify.co
+0.0.0.0 trulove.guru
+0.0.0.0 xda-developers.us
+0.0.0.0 youshouldclick.us
+0.0.0.0 picshost.pics
+0.0.0.0 pichost.pics
+0.0.0.0 imghost.pics
+0.0.0.0 imagehost.pics
+0.0.0.0 toldyouso.lol
+0.0.0.0 toldyouso.pics
+0.0.0.0 screenshare.pics
+0.0.0.0 noodshare.pics
+0.0.0.0 cheapcinema.club
+0.0.0.0 grabify.icu
+0.0.0.0 grabify.link
+0.0.0.0 grabify.world
+0.0.0.0 api.grabify.link
+0.0.0.0 ip-api.com
+0.0.0.0 ip-api.io
+0.0.0.0 ip-grabber.com
+0.0.0.0 ip-grabber.sfbaywhalewatching.com
+0.0.0.0 ip-logger.jbb3333.com
+0.0.0.0 ip-puller.com
+0.0.0.0 ip-tracker.org
+0.0.0.0 ip-trap.com
+0.0.0.0 ip.jlynx.net
+0.0.0.0 ipddoser.xyz
+0.0.0.0 ipgrab.org
+0.0.0.0 ipgrabber.dalenryder.com
+0.0.0.0 ipgrabber.ru
+0.0.0.0 ipgraber.ru
+0.0.0.0 ipinfo.io
+0.0.0.0 iplis.org02ip.ru
+0.0.0.0 iplis.ru
+0.0.0.0 iplist.ru
+0.0.0.0 iplo.ru
+0.0.0.0 iplogger.co
+0.0.0.0 iplogger.com
+0.0.0.0 iplogger.genius-card.com
+0.0.0.0 iplogger.info
+0.0.0.0 iplogger.org
+0.0.0.0 iplogger.ru
+0.0.0.0 ipsnatcher.com
