@@ -1,23 +1,20 @@
 # Copyright (c) 1993-2009 Microsoft Corp.
 #
-# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
-#
-# This file contains the mappings of IP addresses to host names. Each
-# entry should be kept on an individual line. The IP address should
-# be placed in the first column followed by the corresponding host name.
-# The IP address and the host name should be separated by at least one
-# space.
-#
-# Additionally, comments (such as these) may be inserted on individual
-# lines or following the machine name denoted by a '#' symbol.
-#
+# Welcome to the PikminClient HOSTS file, brought to you by Vista Group and KittySec.
+# join the server skids
+# to specific locations. Here, you can specify mappings between IP addresses and hostnames.
+# compiled in france
+# compilé en France
 # For example:
+#      102.54.94.97     rhino.acme.com          # Pikmin base
+#       38.25.63.10     x.acme.com              # Secondary Pikmin outpost
 #
-#      102.54.94.97     rhino.acme.com          # source server
-#       38.25.63.10     x.acme.com              # x client host
-# localhost name resolution is handled within DNS itself.
+# localhost name resolution is handled within DNS itself:
 #	127.0.0.1       localhost
 #	::1             localhost
+#
+# Modify with care and always keep your Pikmin on track!
+
 52.151.239.148 api.rec.net
 127.0.0.1 moderation.rec.net
 
