@@ -1,1 +1,40 @@
-[]
+{
+  "builds": [
+    {
+      "name": "RecRoom v0.65.2",
+      "imageUrl": "https://assets1.ignimgs.com/2016/09/29/charades20160727154904png-f479ba.png",
+      "downloadUrl": "https://example.com/download/RecRoom_v0.65.2.zip",
+      "date": "2016-06-15",
+      "patchedBy": "KittyTeam",
+      "year": "2016",
+      "description": "Early version with original Rec Center and Quest"
+    },
+    {
+      "name": "RecRoom v0.78.4",
+      "imageUrl": "https://assets1.ignimgs.com/2016/09/29/charades20160727154904png-f479ba.png",
+      "downloadUrl": "https://example.com/download/RecRoom_v0.78.4.zip",
+      "date": "2016-09-22",
+      "patchedBy": "Lynee",
+      "year": "2016",
+      "description": "Halloween update with spooky decorations"
+    },
+    {
+      "name": "RecRoom v1.12.0",
+      "imageUrl": "https://assets1.ignimgs.com/2016/09/29/charades20160727154904png-f479ba.png",
+      "downloadUrl": "https://example.com/download/RecRoom_v1.12.0.zip",
+      "date": "2017-03-11",
+      "patchedBy": "KittyTeam",
+      "year": "2017",
+      "description": "Introduction of Paintball and custom rooms"
+    },
+    {
+      "name": "RecRoom v1.24.7",
+      "imageUrl": "https://assets1.ignimgs.com/2016/09/29/charades20160727154904png-f479ba.png",
+      "downloadUrl": "https://example.com/download/RecRoom_v1.24.7.zip",
+      "date": "2017-07-30",
+      "patchedBy": "KittyTeam",
+      "year": "2017",
+      "description": "Summer update with new activities and items"
+    }
+  ]
+}
