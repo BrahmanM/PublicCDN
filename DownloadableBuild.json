@@ -28,13 +28,14 @@
       "description": "Introduction of Paintball and custom rooms"
     },
     {
-      "name": "RecRoom v1.24.7",
+      "name": "The KittyRec Live",
       "imageUrl": "https://assets1.ignimgs.com/2016/09/29/charades20160727154904png-f479ba.png",
       "downloadUrl": "https://example.com/download/RecRoom_v1.24.7.zip",
-      "date": "2017-07-30",
+      "date": "2017-06-08",
       "patchedBy": "KittyTeam",
       "year": "2017",
-      "description": "Summer update with new activities and items"
+      "description": "New Watch Menu, 2017 Watch --> 2017 Watch",
+      "isMain": true
     }
   ]
 }
