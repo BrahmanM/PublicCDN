@@ -1,0 +1,298 @@
+user@tabbycat:~$ ls -la
+drwxr-xr-x  5 user user 4096 Oct 11 14:22 .
+drwxr-xr-x 18 user user 4096 Oct 11 14:22 ..
+drwxr-xr-x  2 user user 4096 Oct 11 14:22 Documents
+drwxr-xr-x  2 user user 4096 Oct 11 14:22 Downloads
+drwxr-xr-x  2 user user 4096 Oct 11 14:22 Projects
+user@tabbycat:~$ echo 'Initializing system check...'
+Initializing system check...
+user@tabbycat:~$ sudo apt-get update
+Hit:1 http://archive.ubuntu.com/ubuntu focal InRelease
+Hit:2 http://archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:3 http://archive.ubuntu.com/ubuntu focal-backports InRelease
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+user@tabbycat:~$ sudo apt-get upgrade
+Calculating upgrade, this may take a while...
+Upgrading packages: 15% [==>                     ]
+Upgrading packages: 45% [======>                 ]
+Upgrading packages: 100% [========================]
+user@tabbycat:~$ sudo jailbreak start
+Initializing jailbreaker by TabbyCat...
+Loading kernel modules... [##########] 100%
+Bypassing system security protocols... SUCCESS
+Injecting TabbyCat override into system BIOS... SUCCESS
+Disabling secure boot... DISABLED
+Establishing root shell... SUCCESS
+Mounting /system as read-write... DONE
+Activating custom daemon: tabbyd... RUNNING
+Jailbreak process initiated.
+user@tabbycat:~$ dmesg | tail
+[   15.234567] TabbyCat: Kernel override engaged.
+[   15.234568] Security module: Disabled.
+[   15.234569] Root shell acquired.
+user@tabbycat:~$ ps aux | grep tabbyd
+user     1456  0.0  0.1  23456  1234 ?        S    14:22   0:00 /usr/bin/tabbyd
+user@tabbycat:~$ cat /proc/version
+Linux version 5.4.0-tabby (tabby@catlab) (gcc version 9.3.0) #1 SMP PREEMPT Thu Oct 8 12:34:56 UTC 2025
+user@tabbycat:~$ uname -a
+Linux tabbycat 5.4.0-tabby #1 SMP PREEMPT Thu Oct 8 12:34:56 UTC 2025 x86_64 GNU/Linux
+user@tabbycat:~$ whoami
+user
+user@tabbycat:~$ id
+uid=1000(user) gid=1000(user) groups=1000(user),27(sudo)
+user@tabbycat:~$ date
+Wed Mar 14 14:35:00 UTC 2025
+user@tabbycat:~$ uptime
+ 14:35:00 up 1 day,  3:42,  2 users,  load average: 0.15, 0.22, 0.20
+user@tabbycat:~$ cat /etc/hostname
+tabbycat
+user@tabbycat:~$ sudo systemctl restart ssh
+Job for ssh.service failed because the control process exited with error code.
+See "systemctl status ssh.service" and "journalctl -xe" for details.
+user@tabbycat:~$ systemctl status ssh
+● ssh.service - OpenBSD Secure Shell server
+   Loaded: loaded (/lib/systemd/system/ssh.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Wed 2025-03-14 14:34:00 UTC; 1min 0s ago
+user@tabbycat:~$ sudo cat /var/log/auth.log
+Mar 14 14:34:00 tabbycat sshd[1456]: Failed password for invalid user root from 192.168.1.5 port 52234 ssh2
+Mar 14 14:34:05 tabbycat sshd[1456]: Received disconnect from 192.168.1.5: 11: Bye Bye
+user@tabbycat:~$ ifconfig
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.1.101  netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 fe80::a00:27ff:fe4e:66a1  prefixlen 64  scopeid 0x20<link>
+user@tabbycat:~$ ping -c 4 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=117 time=14.2 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=117 time=14.5 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=117 time=14.3 ms
+64 bytes from 8.8.8.8: icmp_seq=4 ttl=117 time=14.1 ms
+user@tabbycat:~$ cat /var/log/syslog | grep 'TabbyCat'
+[   15.234567] TabbyCat: Initiating override sequence.
+[   15.235000] TabbyCat: Kernel patch injected.
+[   15.235100] TabbyCat: Secure boot disabled.
+user@tabbycat:~$ tail -n 5 /var/log/syslog
+[  2025-03-14 14:33:58] systemd: Starting Cleanup of Temporary Directories...
+[  2025-03-14 14:33:59] systemd: Finished Cleanup of Temporary Directories.
+[  2025-03-14 14:34:00] sshd[1456]: Disconnected from 192.168.1.5 port 52234
+[  2025-03-14 14:34:05] sshd[1456]: Session closed.
+[  2025-03-14 14:34:10] tabbyd: Monitoring system integrity.
+user@tabbycat:~$ sudo journalctl -xe
+Mar 14 14:34:00 tabbycat sudo:    user : TTY=pts/0 ; PWD=/home/user ; USER=root ; COMMAND=/usr/bin/jailbreak
+Mar 14 14:34:01 tabbycat jailbreak[1500]: Override accepted.
+Mar 14 14:34:02 tabbycat jailbreak[1500]: System security parameters modified.
+Mar 14 14:34:03 tabbycat jailbreak[1500]: Running TabbyCat custom scripts.
+Mar 14 14:34:04 tabbycat tabbyd[1456]: New session initiated.
+Mar 14 14:34:05 tabbycat tabbyd[1456]: Monitoring for anomalies...
+Mar 14 14:34:06 tabbycat tabbyd[1456]: Warning: Unusual process detected.
+Mar 14 14:34:07 tabbycat tabbyd[1456]: Process 1789 flagged.
+Mar 14 14:34:08 tabbycat tabbyd[1456]: Alert level: LOW.
+user@tabbycat:~$ sudo dd if=/dev/zero of=/tmp/fake.bin bs=1M count=10
+10+0 records in
+10+0 records out
+10485760 bytes (10 MB, 10 MiB) copied, 0.123456 s, 85.0 MB/s
+user@tabbycat:~$ md5sum /tmp/fake.bin
+d41d8cd98f00b204e9800998ecf8427e  /tmp/fake.bin
+user@tabbycat:~$ rm /tmp/fake.bin
+user@tabbycat:~$ echo 'TabbyCat Jailbreak: Complete'
+TabbyCat Jailbreak: Complete
+user@tabbycat:~$ clear
+user@tabbycat:~$ cat /etc/os-release
+NAME="Ubuntu"
+VERSION="20.04.6 LTS (Focal Fossa)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 20.04.6 LTS"
+VERSION_ID="20.04"
+user@tabbycat:~$ sudo reboot
+Broadcast message from user@tabbycat (pts/0) at 14:36:
+The system is going down for reboot NOW!
+[  OK  ] Stopped target Graphical Interface.
+[  OK  ] Reached target Multi-User System.
+[  OK  ] Started Getty on tty1.
+[  OK  ] Started Journal Service.
+[  OK  ] Started Network Manager.
+[  OK  ] Starting Update of Man Pages...
+Updating man database...
+[  OK  ] Man database updated.
+[  OK  ] Mounting Temporary Directory (/tmp)...
+user@tabbycat:~$
+user@tabbycat:~$ dmesg | grep TabbyCat
+[   15.000000] TabbyCat: Reinitialized after reboot.
+[   15.000123] TabbyCat: Security modules remain disabled.
+user@tabbycat:~$ uptime
+ 14:37:00 up 2 min,  1 user,  load average: 0.05, 0.10, 0.08
+user@tabbycat:~$ top -n 1 -b | head -5
+top - 14:37:10 up 2 min,  1 user,  load average: 0.05, 0.10, 0.08
+Tasks: 120 total,   1 running, 119 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  3.0 us,  1.0 sy,  0.0 ni, 95.0 id,  1.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem :  4048576 total,  1024000 free,  2024000 used,  1000576 buff/cache
+user@tabbycat:~$ journalctl --since '5 minutes ago' | grep jailbreak
+Mar 14 14:34:02 tabbycat jailbreak[1500]: System security parameters modified.
+Mar 14 14:34:04 tabbycat tabbyd[1456]: New session initiated.
+Mar 14 14:34:07 tabbycat tabbyd[1456]: Alert level: LOW.
+user@tabbycat:~$ ls /var/lib/jailbreak
+core_dump.bin
+override.log
+tabbycat_patch.tar.gz
+user@tabbycat:~$ cat override.log
+Override sequence complete. All security modules bypassed.
+user@tabbycat:~$ free -m
+              total        used        free      shared  buff/cache   available
+Mem:           3952        2024         512         128        1416        1500
+Swap:          2048          10        2038
+user@tabbycat:~$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1        50G   20G   28G  42% /
+tmpfs           2.0G     0  2.0G   0% /dev/shm
+user@tabbycat:~$ history | tail -n 5
+  97  rm /tmp/fake.bin
+  98  echo 'TabbyCat Jailbreak: Complete'
+  99  clear
+ 100  cat /etc/os-release
+ 101  sudo reboot
+user@tabbycat:~$ netstat -tuln
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN
+tcp6       0      0 :::80                   :::*                    LISTEN
+user@tabbycat:~$ sudo lsof -i :80
+COMMAND   PID  USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+nginx    1578  root    6u  IPv4  12345      0t0  TCP *:http (LISTEN)
+nginx    1578  www-data 7u  IPv4  12346      0t0  TCP *:http (LISTEN)
+user@tabbycat:~$ tail -n 3 /var/log/nginx/access.log
+192.168.1.101 - - [14/Mar/2025:14:36:20 +0000] "GET /index.html HTTP/1.1" 200 1024
+192.168.1.102 - - [14/Mar/2025:14:36:22 +0000] "POST /login HTTP/1.1" 302 512
+192.168.1.103 - - [14/Mar/2025:14:36:25 +0000] "GET /admin HTTP/1.1" 403 256
+user@tabbycat:~$ sudo systemctl status nginx
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+user@tabbycat:~$ cat /var/log/jailbreak.log
+TabbyCat Override: Module tabbyd active.
+Kernel patch applied successfully.
+Security bypass confirmed.
+User privileges escalated.
+System fully jailbroken.
+Alert: Monitoring system integrity.
+End of log.
+user@tabbycat:~$ sudo tail -n 10 /var/log/syslog
+[  2025-03-14 14:36:10] systemd: Starting Cleanup of Temporary Directories...
+[  2025-03-14 14:36:11] systemd: Finished Cleanup of Temporary Directories.
+[  2025-03-14 14:36:12] sshd[1600]: Accepted password for user from 192.168.1.101 port 52345 ssh2
+[  2025-03-14 14:36:13] sshd[1600]: pam_unix(sshd:session): session opened for user user by (uid=0)
+[  2025-03-14 14:36:14] sudo:    user : TTY=pts/0 ; PWD=/home/user ; USER=root ; COMMAND=/usr/bin/jailbreak
+[  2025-03-14 14:36:15] jailbreak[1500]: Reconfiguring system parameters...
+[  2025-03-14 14:36:16] tabbyd[1456]: Running integrity check...
+[  2025-03-14 14:36:17] tabbyd[1456]: Integrity check passed.
+[  2025-03-14 14:36:18] systemd: Starting Network Manager...
+user@tabbycat:~$ netstat -an | grep 'ESTABLISHED'
+tcp        0      0 192.168.1.101:22        192.168.1.50:54321      ESTABLISHED
+tcp6       0      0 192.168.1.101:80        192.168.1.60:12345      ESTABLISHED
+user@tabbycat:~$ sudo iftop -i eth0 -n
+Displaying bandwidth usage on interface eth0
+Total send rate: 1.2 Mbit/s, Total receive rate: 1.5 Mbit/s
+user@tabbycat:~$ ping -c 2 192.168.1.1
+PING 192.168.1.1 (192.168.1.1) 56(84) bytes of data.
+64 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=0.123 ms
+64 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=0.101 ms
+user@tabbycat:~$ traceroute 8.8.8.8
+traceroute to 8.8.8.8 (8.8.8.8), 30 hops max, 60 byte packets
+ 1  192.168.1.1 (192.168.1.1)  0.123 ms  0.101 ms  0.095 ms
+ 2  10.0.0.1 (10.0.0.1)  1.234 ms  1.210 ms  1.198 ms
+ 3  * * *
+ 4  172.16.0.1 (172.16.0.1)  5.678 ms  5.645 ms  5.632 ms
+ 5  8.8.8.8 (8.8.8.8)  10.234 ms  10.201 ms  10.198 ms
+user@tabbycat:~$ sudo systemctl restart networking
+Networking service restarted successfully.
+user@tabbycat:~$ dmesg | tail -n 5
+user@tabbycat:~$ 
+[   15.236000] TabbyCat: Network override active.
+[   15.236100] eth0: Link is Up - 1Gbps/Full - flow control off
+[   15.236200] tabbyd: Monitoring network packets.
+[   15.236300] iptables: New rule added for port 22.
+[   15.236400] iptables: New rule added for port 80.
+user@tabbycat:~$ cat /var/log/dpkg.log | tail -n 3
+2025-03-14 14:34:00 install jailbreak:amd64 <none> 1.0
+2025-03-14 14:34:01 configure jailbreak:amd64 1.0 <none>
+2025-03-14 14:34:02 status installed jailbreak:amd64 1.0
+user@tabbycat:~$ sudo apt-get clean
+Clearing out local repository of retrieved package files...
+user@tabbycat:~$ ls -R /etc | grep -i 'tabby'
+/etc/tabbycat.conf
+user@tabbycat:~$ cat /etc/tabbycat.conf
+override_enabled=1
+security_level=0
+patch_version=1.0.3
+user@tabbycat:~$ echo 'Jailbreak running smoothly' >> /var/log/jailbreak.log
+user@tabbycat:~$ tail -n 2 /var/log/jailbreak.log
+Override sequence complete. All security modules bypassed.
+Jailbreak running smoothly
+user@tabbycat:~$ sudo systemctl status tabbyd
+● tabbyd.service - TabbyCat Override Daemon
+   Loaded: loaded (/lib/systemd/system/tabbyd.service; enabled)
+   Active: active (running) since Wed 2025-03-14 14:34:30 UTC; 5min ago
+user@tabbycat:~$ ps -ef | grep jailbreak
+root      1500     1  0 14:34 ?        00:00:01 /usr/bin/jailbreak
+user      1600  1500  0 14:36 ?        00:00:02 /usr/bin/jailbreak_monitor
+user@tabbycat:~$ cat /var/log/boot.log | tail -n 4
+[   15.000000] Boot sequence initiated.
+[   15.000100] System memory check passed.
+[   15.000200] All modules loaded successfully.
+[   15.000300] TabbyCat override active.
+user@tabbycat:~$ uname -r
+5.4.0-tabby
+user@tabbycat:~$ sudo modprobe -r secure_boot
+secure_boot: Module removal successful.
+user@tabbycat:~$ sudo modprobe tabby_patch
+tabby_patch: Module loaded successfully.
+user@tabbycat:~$ dmesg | grep patch
+[   15.000500] tabby_patch: Applied kernel patch.
+[   15.000600] tabby_patch: Verifying patch integrity.
+[   15.000700] tabby_patch: Patch verified.
+user@tabbycat:~$ cat /proc/cpuinfo | grep 'model name'
+model name  : Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz
+model name  : Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz
+user@tabbycat:~$ lscpu | grep '^CPU(s):'
+CPU(s):              8
+user@tabbycat:~$ free -h
+              total        used        free      shared  buff/cache   available
+Mem:           3.9G        2.0G        500M        150M        1.4G        1.6G
+Swap:          2.0G        50M         1.95G
+user@tabbycat:~$ top -n 1 -b | head -n 10
+top - 14:38:00 up 3 min,  1 user,  load average: 0.10, 0.15, 0.12
+Tasks: 120 total,   2 running, 118 sleeping,   0 stopped,   0 zombie
+Cpu(s):  5.0%us,  3.0%sy,  0.0%ni, 90.0%id,  2.0%wa,  0.0%hi,  0.0%si,  0.0%st
+Mem:   3952M total,  2024M used,  1024M free,   1416M buff/cache
+Swap:  2048M total,    10M used,  2038M free
+user@tabbycat:~$ echo 'All systems nominal.'
+All systems nominal.
+user@tabbycat:~$ dmesg -n 1
+[   15.001000] Kernel log level set to 1.
+user@tabbycat:~$ uname -v
+#1 SMP PREEMPT Thu Oct 8 12:34:56 UTC 2025
+user@tabbycat:~$ lsmod | grep tabby
+tabby_patch           16384  1
+tabbyd                32768  0
+user@tabbycat:~$ history -n 20
+cat /etc/os-release
+sudo reboot
+sudo apt-get update
+sudo jailbreak start
+cat /var/log/syslog
+dmesg | grep TabbyCat
+ifconfig
+ping -c 4 8.8.8.8
+netstat -tuln
+ls -la
+clear
+user@tabbycat:~$ echo 'Looping back to start...'
+Looping back to start...
+user@tabbycat:~$ ls -la
+drwxr-xr-x  5 user user 4096 Oct 11 14:22 .
+drwxr-xr-x 18 user user 4096 Oct 11 14:22 ..
+drwxr-xr-x  2 user user 4096 Oct 11 14:22 bin
+drwxr-xr-x  2 user user 4096 Oct 11 14:22 etc
+drwxr-xr-x  2 user user 4096 Oct 11 14:22 var
+user@tabbycat:~$ cat /var/log/jailbreak.log
+End of TabbyCat jailbreak session. All systems nominal.
