@@ -1,41 +1,13 @@
 {
   "builds": [
     {
-      "name": "RecRoom v0.65.2",
+      "name": "No Builds Available",
       "imageUrl": "https://assets1.ignimgs.com/2016/09/29/charades20160727154904png-f479ba.png",
-      "downloadUrl": "https://drive.usercontent.google.com/download?id=1_N8brB7gwsAPsRm2Gm9pUO28ck9bk-82&export=download&authuser=0&confirm=t&uuid=5fe80fd3-c83b-4db6-a298-d0bbcc904f7c&at=AEz70l404AfEDwiZ7-zyhzQuHCWf%3A1741559129776",
-      "date": "2016-06-15",
+      "downloadUrl": "",
+      "date": "N/A",
       "patchedBy": "KittyTeam",
-      "year": "2016",
-      "description": "Early version with original Rec Center and Quest"
-    },
-    {
-      "name": "RecRoom v0.78.4",
-      "imageUrl": "https://assets1.ignimgs.com/2016/09/29/charades20160727154904png-f479ba.png",
-      "downloadUrl": "https://example.com/download/RecRoom_v0.78.4.zip",
-      "date": "2016-09-22",
-      "patchedBy": "Lynee",
-      "year": "2016",
-      "description": "Halloween update with spooky decorations"
-    },
-    {
-      "name": "RecRoom v1.12.0",
-      "imageUrl": "https://assets1.ignimgs.com/2016/09/29/charades20160727154904png-f479ba.png",
-      "downloadUrl": "https://example.com/download/RecRoom_v1.12.0.zip",
-      "date": "2017-03-11",
-      "patchedBy": "KittyTeam",
-      "year": "2017",
-      "description": "Introduction of Paintball and custom rooms"
-    },
-    {
-      "name": "The KittyRec Live",
-      "imageUrl": "https://assets1.ignimgs.com/2016/09/29/charades20160727154904png-f479ba.png",
-      "downloadUrl": "https://example.com/download/RecRoom_v1.24.7.zip",
-      "date": "2017-06-08",
-      "patchedBy": "KittyTeam",
-      "year": "2017",
-      "description": "New Watch Menu, 2017 Watch --> 2017 Watch",
-      "isMain": true
+      "year": "N/A",
+      "description": "There are currently no builds available for download. Please check back later!"
     }
   ]
 }
