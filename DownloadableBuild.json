@@ -1,13 +1,14 @@
 {
   "builds": [
     {
-      "name": "No Builds Available",
+      "name": "The KittyRec Live",
       "imageUrl": "https://assets1.ignimgs.com/2016/09/29/charades20160727154904png-f479ba.png",
-      "downloadUrl": "",
-      "date": "N/A",
+      "downloadUrl": "https://drive.usercontent.google.com/download?id=1aIafHVMZz8PJAsVub6L6OGz5g3VwA0EA&export=download&authuser=0&confirm=t&uuid=a0ea9d77-f953-4511-80a1-8bbe7c7569df&at=AEz70l7np0wFrJy6mKcmiC4Gl_wz%3A1742690178288",
+      "date": "2025-03-22",
       "patchedBy": "KittyTeam",
-      "year": "N/A",
-      "description": "There are currently no builds available for download. Please check back later!"
+      "year": "2017",
+      "description": "Main build — No WebSockets, authenticates via Steam.",
+      "isMain": true
     }
   ]
 }
